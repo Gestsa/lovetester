@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Tester</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: pink;
+            color: #333;
+            margin-top: 50px;
+        }
+        input {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: darkred;
+        }
+        #wynik {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Love Tester ❤️</h1>
+    <input type="text" id="imie1" placeholder="Imię 1">
+    <input type="text" id="imie2" placeholder="Imię 2">
+    <br>
+    <button onclick="testujMilosc()">Testuj miłość</button>
+    <div id="wynik"></div>
+
+    <script>
+        function testujMilosc() {
+            let imie1 = document.getElementById('imie1').value;
+            let imie2 = document.getElementById('imie2').value;
+
+            if(imie1 === "" || imie2 === ""){
+                document.getElementById('wynik').innerHTML = "Podaj oba imiona!";
+                return;
+            }
+
+            let procent = Math.floor(Math.random() * 101); // 0-100%
+            document.getElementById('wynik').innerHTML = 
+                imie1 + " ❤️ " + imie2 + " = " + procent + "%";
+        }
+    </script>
+
+</body>
+</html>
